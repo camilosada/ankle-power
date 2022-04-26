@@ -12,4 +12,4 @@
 inertial sensor. 
 
 ## Documentation 
-Documentation available [here](ankle-power\report.md) 
+Documentation is available [here](https://github.com/camilosada/ankle-power/blob/master/report.md) 

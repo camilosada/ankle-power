@@ -16,7 +16,7 @@ Using the recordings of the movements of a patient’s ankle, the objective of t
 ## Power
 In activities of daily living the rate at which muscles can produce work, referred as power production, is the critical performance variable. Power production is measured as the amount of work done per unit time (Eq. 1).
 
-$\bar{𝑃}$ = 	$\frac{𝑈}{∆𝑡}$ = $\bar{𝐹}$·$\frac{∆𝑟}{∆𝑡}$  = $\bar{𝐹}$ · $\bar{v}$ = 𝑚 $\bar{a}$ · $\bar{v}$  (Eq. 1)
+![equation](https://latex.codecogs.com/gif.latex?%5Cbar%7BP%7D%3D%5Cfrac%7BU%7D%7B%5CDelta%20t%7D%3D%20%5Cbar%7BF%7D%20%5Ccdot%20%5Cfrac%7B%5CDelta%20r%7D%7B%5CDelta%20t%7D%20%3D%20%5Cbar%7BF%7D%20%5Ccdot%20%5Cbar%7Bv%7D%20%3D%20m%20%5Cbar%7Ba%7D%20%5Ccdot%20%5Cbar%7Bv%7D) (Eq. 1)
 
 Power is computed as the work done (U) divided by the amount of time (t) it took to perform
 the work, or as the product of force (F) and velocity (v). Because acceleration and force are
@@ -29,7 +29,7 @@ negative indicates that the energy flows to the muscle (figure 1). Since what in
 know the power that the patient is capable of delivering, we will only analyze the positive
 power values.
 
-![power](img\ankle_power.jpg)
+![power](https://github.com/camilosada/ankle-power/blob/master/img/ankle_power.jpg)
 Figure 1. Power of the ankle joint during a normal gait cycle.
 
 ## Coordinate system
@@ -39,18 +39,18 @@ system that works as an absolute reference for all sensors. A rotation matrix (E
 to translate the sensor's coordinates into a single coordinate system, the WCS. Spatial
 rotations in three dimensions can be parametrized using both Euler angles and quaternions.
 
-![euler](img\euler.jpg) (Eq. 2)<br/>
+![euler](https://github.com/camilosada/ankle-power/blob/master/img/euler.jpg) (Eq. 2)<br/>
 XYZ are the rotated body coordinates, xyz the original lab coordinates and ψ, θ, φ Euler angles.
 
 Quaternions provide a convenient mathematical notation for representing spatial orientations
 and rotations. Compared to rotation matrices they are more compact, more numerically
 stable, and more efficient. A unit quaternion can be described as:
 
-![u_q](img\unit_q.jpg) (Eq. 3)
+![u_q](https://github.com/camilosada/ankle-power/blob/master/img/unit_q.jpg) (Eq. 3)
 
 The Euler angles can be obtained from the quaternions via the relations:
 
-![quaternions](img\quaternions.jpg) (Eq. 4)
+![quaternions](https://github.com/camilosada/ankle-power/blob/master/img/quaternions.jpg) (Eq. 4)
 
 ## The data
 3D trajectory of the ankle of a patient reconstructed from measurements taken by a magneto inertial sensor. 
@@ -73,7 +73,7 @@ Finally using the rotation matrix, it was possible to obtain the speed in the wo
 
 `speed_rot = speed_rotation(rotation_matrix,speed)`
 
-Before calculating the acceleration as $\frac{v_{i+1}-v_i}{t_{i+1}-t_i}$
+Before calculating the acceleration as ![equation](https://latex.codecogs.com/gif.latex?%5Cfrac%7Bv_%7Bi&plus;1%7D-v_i%7D%7Bt_%7Bi&plus;1%7D-t_i%7D)
 it was necessary to filter the speed signal.
 
 Using the FFT (Fast Fourier transform) it was observed the frequencies went from 0 Hz to more than 60 Hz, so a low-pass butterworth filter, with a cutoff frequency of 10 Hz, was used for that purpose.
@@ -95,26 +95,26 @@ In order to keep only relevant values, negative values were set to zero, and val
 ## Results
 In figure 2 it is possible to observe the power obtained from the first 30 seconds of the first day. This short time frame was traced to make it readable.
 
-![power1](img\power1.jpg)<br/>
+![power1](https://github.com/camilosada/ankle-power/blob/master/img/power1.jpg)<br/>
 Figure 2. Power obtained from the first 30 seconds of the first day
 
 In figure 3 it is possible to see the mean power of each hour of the first, fourth and fourteenth day. The fourth day is the day with the most amount of time with information, and the fourteenth, the day with less.
 
-![power3](img\power3.jpg)<br/>
+![power3](https://github.com/camilosada/ankle-power/blob/master/img/power3.jpg)<br/>
 Figure 3. Mean power of each hour of the first, fourth and fourteenth day.
 
 To compare the power between the days, the mean power generated on each day was calculated (Figure 4).
 Because each day has a different number of hours with information, to make it comparable, the days that had less than 7 hours of information were removed (days 5,6,10 and 14). From the rest of the days, the time interval between 8 am and 3 pm was selected, and the mean value of power was calculated (Figure 5).
 
-![meanday](img\meanday.jpg)<br/>
+![meanday](https://github.com/camilosada/ankle-power/blob/master/img/meanday.jpg)<br/>
 Figure 4. Mean power generated on each day.
 
-![meanday2](img\meanday2.jpg)<br/>
+![meanday2](https://github.com/camilosada/ankle-power/blob/master/img/meanday2.jpg)<br/>
 Figure 5. Mean power from 8 am to 3pm.
 
 In the last figure (figure 6), it is possible to see the mean value for each week at each hour between 8 am and 3 pm. Only the days with information in that period were used. To have the same number of days in each week, the first 5 were selected for week 1 and the last 5 for week 2.The middle day was not used (day 8). This decision was based on separating the two weeks as much as possible to see if there was a difference between the first and last days.
 
-![meanweek](img\meanweek.jpg)<br/>
+![meanweek](https://github.com/camilosada/ankle-power/blob/master/img/meanweek.jpg)<br/>
 Figure 6. Mean value for each week at each hour between 8 am and 3 pm.
 
 ## Discussion and conclusion
